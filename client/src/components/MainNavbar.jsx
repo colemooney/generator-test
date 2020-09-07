@@ -10,13 +10,19 @@ function MainNavbar(props) {
   }
   return (
     <nav className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">MERN Boilerplate</h1>
+      <h1>
+        <img
+          src="https://spxeastwebfarm8-spherexxcom.netdna-ssl.com/common/uploads/zrs2019/505/media/2a7d8d7d-0bd3-4060-9bef-0b8b68a61753.png"
+          className="App-logo"
+          alt="logo"
+        />
+      </h1>
+      {/* <h1 className="App-title">4 West Online</h1> */}
       <NavLink to="/" exact>
         Home
       </NavLink>
-      <NavLink to="/countries">Countries</NavLink>
-      <NavLink to="/add-country">Add country</NavLink>
+      <NavLink to="/countries">Complaints</NavLink>
+      <NavLink to="/add-country">Add Event</NavLink>
       {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
       {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
       {api.isLoggedIn() && (
@@ -24,7 +30,7 @@ function MainNavbar(props) {
           Logout
         </Link>
       )}
-      <NavLink to="/secret">Secret</NavLink>
+      <NavLink to="/secret">Live Chat</NavLink>
     </nav>
   )
 }

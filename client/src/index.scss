@@ -43,13 +43,14 @@ body {
 
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
-    height: 80px;
+    height: 100px;
   }
 
   .App-header {
-    background-color: $primary;
+    background-image: url('./pattern-hexagon.png');
     padding: 20px;
     color: white;
+    filter: invert(90%);
 
     a {
       color: white;

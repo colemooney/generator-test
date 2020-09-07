@@ -14,14 +14,16 @@ const bcryptSalt = 10
 
 require('../configs/database')
 
-let users = [
+let events = [
   {
-    username: 'alice',
-    password: bcrypt.hashSync('alice', bcrypt.genSaltSync(bcryptSalt)),
+    date: 'Cole',
+    room: 'Club room',
+    unit: '1401',
   },
   {
-    username: 'bob',
-    password: bcrypt.hashSync('bob', bcrypt.genSaltSync(bcryptSalt)),
+    date: 'Trey',
+    room: 'Pool room',
+    unit: '1401',
   },
 ]
 
@@ -29,15 +31,15 @@ User.deleteMany()
   .then(() => {
     return User.create(users)
   })
-  .then(usersCreated => {
+  .then((usersCreated) => {
     console.log(`${usersCreated.length} users created with the following id:`)
-    console.log(usersCreated.map(u => u._id))
+    console.log(usersCreated.map((u) => u._id))
   })
   .then(() => {
     // Close properly the connection to Mongoose
     mongoose.disconnect()
   })
-  .catch(err => {
+  .catch((err) => {
     mongoose.disconnect()
     throw err
   })
