@@ -9,21 +9,20 @@ require('dotenv').config({ path: path.join(__dirname, '../.env') })
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const User = require('../models/User')
+const Post = require('../models/Post')
 
 const bcryptSalt = 10
 
 require('../configs/database')
 
-let events = [
+let posts = [
   {
-    date: 'Cole',
-    room: 'Club room',
-    unit: '1401',
+    author: 'alice',
+    password: bcrypt.hashSync('alice', bcrypt.genSaltSync(bcryptSalt)),
   },
   {
-    date: 'Trey',
-    room: 'Pool room',
-    unit: '1401',
+    username: 'bob',
+    password: bcrypt.hashSync('bob', bcrypt.genSaltSync(bcryptSalt)),
   },
 ]
 
