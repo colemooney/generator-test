@@ -61,6 +61,12 @@ body {
     a.active {
       font-weight: bold;
     }
+    // a:link {
+    //   color: red;
+    // }
+    a:hover {
+      color: hotpink;
+    }
   }
 
   .App-title {

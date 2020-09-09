@@ -21,16 +21,19 @@ function MainNavbar(props) {
       <NavLink to="/" exact>
         Home
       </NavLink>
-      <NavLink to="/countries">Complaints</NavLink>
-      <NavLink to="/add-country">Add Event</NavLink>
+      <NavLink to="/countries">Posts</NavLink>
+      <NavLink to="/add-country">Podcast</NavLink>
       {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
       {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
       {api.isLoggedIn() && (
-        <Link to="/" onClick={handleLogoutClick}>
-          Logout
-        </Link>
+        <>
+          <Link to="/" onClick={handleLogoutClick}>
+            Logout
+          </Link>
+
+          <NavLink to="/secret">Make Post</NavLink>
+        </>
       )}
-      <NavLink to="/secret">Live Chat</NavLink>
     </nav>
   )
 }
